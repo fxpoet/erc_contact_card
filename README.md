@@ -3,14 +3,14 @@ the proposal about contact card specification for ERC
 
 ***
 
-eip: <to be assigned>
-title: Contact Card
-author: Kiyoung Jung(@fxpoet) 
-discussions-to: <URL>
-status: Draft
-type: Standards Track
-category : ERC
-created: 2018-11-08
+eip: <to be assigned>  
+title: Contact Card  
+author: Kiyoung Jung(@fxpoet)  
+discussions-to: <URL>  
+status: Draft  
+type: Standards Track  
+category : ERC  
+created: 2018-11-08  
 
 ***
 
