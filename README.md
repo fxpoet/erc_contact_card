@@ -89,12 +89,22 @@ contract ContactCardInferface {
     function getValue(string key) public view returns (string);
 }
 ```
-2. 
+2. Usage 
+You can expand fields.
 ```
+.contact -> return basic struct (name, company...)
+
+.setValue("github", "fxpoet")
+.setValue("telegram", "fxpoet")
+
+.extKeys -> "github,telegram"
+
+.getValue("github") -> "fxpoet"
 ```
 
 ## Implementation
 Interface Codes 
 <https://github.com/fxpoet/erc_contact_card/blob/master/ContactCardInterface.sol>
+
 Contact Card Example 
 <https://github.com/fxpoet/erc_contact_card/blob/master/ContactCard.sol>
