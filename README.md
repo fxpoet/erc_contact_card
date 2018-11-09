@@ -86,7 +86,7 @@ contract ContactCardInferface {
 
     event Modified(string keyField, uint256 modified);
 
-	function setValue(string key, string value) onlyOwner public;
+    function setValue(string key, string value) onlyOwner public;
     function getValue(string key) public view returns (string);
 }
 ```
@@ -109,8 +109,8 @@ It is very intuitive and easy to use and you can expand data fields.
 3. I18n
 
 People sometimes use two names when live in another country.
-country code uses ISO 3166-1 alpha-2.
-<https://wikipedia.org/wiki/ISO_3166-1>
+
+Country code uses ISO 3166-1 alpha-2. <https://wikipedia.org/wiki/ISO_3166-1>
 
 ```
 .contact.country -> "kr"   // Korea
@@ -118,6 +118,19 @@ country code uses ISO 3166-1 alpha-2.
 
 .setValue("name_us", "Yodelay")
 ```
+
+4. Encryption for Privacy
+
+You can store information as encrypted string.
+of cource, you have to give the decrpyion code to that person.
+In this case, the QR code drawn your business card can be used as a decryption key.
+
+The "Encrypted" variable describes which encryption algorithm was used.
+
+```
+string public encrypted; // empty or "AES"    
+```
+
 
 ## Implementation
 Interface Codes:  
