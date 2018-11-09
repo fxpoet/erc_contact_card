@@ -6,7 +6,7 @@ the proposal about contact card specification for ERC
 eip: <to be assigned>  
 title: Contact Card  
 author: Kiyoung Jung(@fxpoet)  
-discussions-to: <URL>  
+discussions-to: https://github.com/ethereum/EIPs/issues/1572
 status: Draft  
 type: Standards Track  
 category : ERC  
@@ -22,13 +22,13 @@ This ERC defines a standard interface for reading information in any contact app
 This RPC proposes a specification about standard contact information interface in Ethereum contract.
 
 ## Motivation 
-When you have networking at a conference, you should exchange lots of businees cards with each other.
-After that, you have to  manually input them with finger typing into the contact application.
+When you have networking at a conference, you should exchange lots of business cards with each other.
+After that, you have to manually input them with finger typing into the contact application.
 
 On the other hand, if the information is already in the blockchain and the interface is already defined,
 you can import the information by just scanning the QR code drawn on the business card.
 
-Somtimes, we need to change businees cards after deployment.
+Sometimes, we need to change business cards after deployment.
 For various reasons, such as wanting to know that a job has changed, department changes, etc.
 this Smart Contract can change the information simply without redistributing business card.
 
@@ -46,12 +46,12 @@ Why Smart Contract?
 It's really simple. I want to create a standard form for use as a digital business card.
 We can think of two forms like the Bussiness Card.
 
-1. Standard Bussiness Card 
+1. Standard Business Card 
     - It is a normal businees card that informs company and contact information to a person.
 2. Commercial Contact Card 
-    - It is a infomation card for a store which need reservation, order, delivery.
+    - It is an information card for a store which needs reservation, order, delivery.
 
-Especially in case 2, that smart contract can help you peer to peer deal without online shop.
+Especially in case 2, that smart contract can help you peer to peer deal without an online shop.
 
 ## Specification 
 
@@ -108,7 +108,7 @@ It is very intuitive and easy to use and you can expand data fields.
 
 ### 3. I18n
 
-People sometimes use two names when live in another country.
+People sometimes use two names when living in another country.
 
 Country code uses ISO 3166-1 alpha-2. <https://wikipedia.org/wiki/ISO_3166-1>
 
@@ -122,7 +122,7 @@ Country code uses ISO 3166-1 alpha-2. <https://wikipedia.org/wiki/ISO_3166-1>
 ### 4. Encryption for Privacy
 
 You can store information as encrypted string.
-of cource, you have to give the decrpyion code to that person.
+of course, you have to give the decrpytion code to that person.
 In this case, the QR code drawn your business card can be used as a decryption key.
 
 The "Encrypted" variable describes which encryption algorithm was used.
