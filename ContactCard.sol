@@ -1,6 +1,5 @@
 pragma solidity ^0.4.24;
 
-
 contract ContactCard {
     
     enum Status { DISABLE, ENABLE, REDIRECT }
@@ -101,6 +100,5 @@ contract ContactCard {
     function () external payable {
         // Any action you want.
     }
-
 }
 

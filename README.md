@@ -106,116 +106,24 @@ It is very intuitive and easy to use and you can expand data fields.
 .getValue("github") -> "fxpoet"
 ```
 
-3. Example Code 
+3. I18n
+
+People sometimes use two names when live in another country.
+country code uses ISO 3166-1 alpha-2.
+<https://wikipedia.org/wiki/ISO_3166-1>
+
 ```
-pragma solidity ^0.4.24;
+.contact.country -> "kr"   // Korea
+.contact.name -> "Kiyoung" // name you use in your country.
 
-contract ContactCard {
-    
-    enum Status { DISABLE, ENABLE, REDIRECT }
-
-    address public owner; // admin
- 
-    string public encrypted = "AES";
-    string public version = "ERC1xxx";
-	Status  public status;
-    string  public redirect;
-    uint256 public modified;
-        
-    string public template;
-    string public imageURL;
-        
-    struct basicContact {
-        string name;
-        string surname;
-        string country;
-        string company;
-        string title;
-        string email;
-        string mobile;
-    }
-    
-    basicContact public contact;    
-    string public extKeys;
-
-    mapping (string => string) values;
-    mapping (string => bool) existExtKey;
-    
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Permission Denied. Owner Only");
-        _;
-    }
-    
-    event Modified(string keyField, uint256 modified);
-    //----------------------------------------------------
-    
-    constructor() public {
-        
-        contact = basicContact(
-            "Kiyoung","Jung", 
-            "ko",
-            "Kimchi Powered", "Developer", 
-            "im@fxpoet.com", "010-2030-xxxx"
-        );
-
-        status   = Status.ENABLE;
-        owner    = msg.sender;        
-        modified = block.timestamp;
-    }
-    
-    function setValue(string key, string value) onlyOwner public {
-        
-        if (equals(key, "name"))    { contact.name = value; } else 
-        if (equals(key, "surname")) { contact.surname = value; } else 
-        if (equals(key, "country")) { contact.country = value; } else 
-        if (equals(key, "company")) { contact.company = value; } else 
-        if (equals(key, "title"))   { contact.title = value; } else 
-        if (equals(key, "email")) { contact.email = value; } else 
-        if (equals(key, "mobile")) { contact.mobile = value; } else 
-        if (equals(key, "template")) { template = value; } else 
-        if (equals(key, "redirect")) { redirect = value; } else
-        if (equals(key, "imageURL")) { imageURL = value; } 
-        else {
-            if (!existExtKey[key]) {
-                if (bytes(extKeys).length == 0)
-                    extKeys = key;
-                else
-                    extKeys = concat(extKeys, key);
-                existExtKey[key] = true;
-            }
-            values[key] = value;
-        }
-        modified = block.timestamp;
-        emit Modified(key, modified);
-    }
-    
-    function getValue(string key) public view returns (string) {
-        return values[key];
-    }
-    
-    function setStatus(uint8 statusCode) public {
-        status = Status(statusCode);
-        modified = block.timestamp;
-        emit Modified("status", modified);
-    }
-    
-    function () external payable {
-        // Any action you want.
-    }
-
-    function concat(string a, string b) internal pure returns (string) {
-        return string(abi.encodePacked(a, ",", b));
-    }
-    
-    function equals(string v1, string v2) internal pure returns (bool) {
-        return(keccak256(abi.encodePacked(v1)) == keccak256(abi.encodePacked(v2)));
-    }    
-}
+.setValue("name_us", "Yodelay")
 ```
 
 ## Implementation
-Interface Codes 
+Interface Codes:  
+
 <https://github.com/fxpoet/erc_contact_card/blob/master/ContactCardInterface.sol>
 
-Contact Card Example 
+Contact Card Example:  
+
 <https://github.com/fxpoet/erc_contact_card/blob/master/ContactCard.sol>
