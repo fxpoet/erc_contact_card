@@ -55,7 +55,7 @@ Especially in case 2, that smart contract can help you peer to peer deal without
 
 ## Specification 
 
-1. Interface 
+### 1. Interface 
 ```
 contract ContactCardInferface {
     
@@ -91,7 +91,7 @@ contract ContactCardInferface {
 }
 ```
 
-2. Usage 
+### 2. Usage 
 
 It is very intuitive and easy to use and you can expand data fields.
 
@@ -106,7 +106,7 @@ It is very intuitive and easy to use and you can expand data fields.
 .getValue("github") -> "fxpoet"
 ```
 
-3. I18n
+### 3. I18n
 
 People sometimes use two names when live in another country.
 
@@ -119,7 +119,7 @@ Country code uses ISO 3166-1 alpha-2. <https://wikipedia.org/wiki/ISO_3166-1>
 .setValue("name_us", "Yodelay")
 ```
 
-4. Encryption for Privacy
+### 4. Encryption for Privacy
 
 You can store information as encrypted string.
 of cource, you have to give the decrpyion code to that person.
