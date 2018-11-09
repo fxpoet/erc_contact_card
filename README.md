@@ -1,7 +1,8 @@
 # erc_contact_card
 the proposal about contact card specification for ERC
 
----
+***
+
 eip: <to be assigned>
 title: Contact Card
 author: Kiyoung Jung(@fxpoet) 
@@ -10,7 +11,8 @@ status: Draft
 type: Standards Track
 category : ERC
 created: 2018-11-08
----
+
+***
 
 ## Simple Summary 
 A Smart Contract Based Digital Business Card that allows you to modify information after deployment.
