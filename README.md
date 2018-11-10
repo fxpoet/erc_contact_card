@@ -5,7 +5,7 @@ the proposal about contact card specification for ERC
 
 eip: <to be assigned>  
 title: Contact Card  
-author: Kiyoung Jung(@fxpoet)  
+author: Kiyoung Jung(@fxpoet), KyoungMin Baek(@marsland83)  
 discussions-to: https://github.com/ethereum/EIPs/issues/1572
 status: Draft  
 type: Standards Track  
